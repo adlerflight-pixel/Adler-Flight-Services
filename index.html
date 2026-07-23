@@ -306,6 +306,15 @@
       .nav-links a:not(.btn-primary) { display: none; }
     }
 
+    /* ───── discovery flight inner grid ───── */
+    .disc-body {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 52px;
+      padding: 40px 36px;
+    }
+    @media (max-width: 800px) {
+      .disc-body { grid-template-columns: 1fr; gap: 36px; padding: 28px 24px; }
+    }
+
     /* ───── mobile overrides ───── */
     @media (max-width: 640px) {
       /* steps grid: single column */
@@ -376,6 +385,7 @@
     <!-- links -->
     <nav class="nav-links" style="display:flex;align-items:center;">
       <a href="#training">Training</a>
+      <a href="#discovery">Discovery Flight</a>
       <a href="#approach">Approach</a>
       <a href="#instructor">Instructor</a>
       <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-primary" style="margin-left:28px;">Book a Flight</a>
@@ -434,8 +444,9 @@
       </p>
 
       <div class="rv" style="display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-primary">Book a Free Consultation</a>
-        <a href="#training" class="btn-ghost">See Training Paths</a>
+        <!-- UPDATE: swap this URL to a discovery-flight-specific Calendly event once created -->
+        <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-primary">Book a Discovery Flight — $350</a>
+        <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-ghost">Have questions? Free 30-min call</a>
       </div>
 
     </div>
@@ -476,7 +487,7 @@
 
     <div class="sec-head rv">
       <div class="eyebrow">Training paths</div>
-      <h2>From first flight to checkride — and every rating after.</h2>
+      <h2>Certificates, ratings, currency — whatever's next.</h2>
       <p>Every program runs on focused three-hour blocks: brief, fly, debrief.
          You always know what the lesson is for and what comes next.</p>
     </div>
@@ -520,7 +531,181 @@
         <p>Train in the aircraft you own. Syllabus, scheduling, and currency built around your airplane and your mission.</p>
       </div>
 
+      <div class="card">
+        <div class="card-code">BFR</div>
+        <h3>Flight Review</h3>
+        <p>Structured, thorough, and documented — in your aircraft or the SR20. Not just a box to check.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-code">IPC</div>
+        <h3>Instrument Proficiency Check</h3>
+        <p>Stay current and stay sharp. Real approaches and holds — the standard that actually keeps you safe in IMC.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-code">CXO</div>
+        <h3>New-to-You Checkout</h3>
+        <p>Just bought a new airplane? Get properly checked out — systems, operating envelope, and the quirks your logbook won't mention.</p>
+      </div>
+
     </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     DISCOVERY FLIGHT
+════════════════════════════════════════════════ -->
+<section id="discovery" style="padding:100px 0;border-top:1px solid rgba(79,163,217,0.10);">
+  <div class="section-wrap">
+
+    <div class="sec-head rv">
+      <div class="eyebrow" style="color:#E8A020;">Discovery flight</div>
+      <h2>See what flying actually feels like.</h2>
+      <p>One flight. No commitment. You take the controls.</p>
+    </div>
+
+    <!-- featured card -->
+    <div class="rv" style="background:#0D1B2A;border:1.5px solid rgba(232,160,32,0.28);
+         border-radius:14px;overflow:hidden;
+         box-shadow:0 8px 48px rgba(0,0,0,0.45),0 0 0 1px rgba(232,160,32,0.06);">
+
+      <!-- header bar -->
+      <div style="background:rgba(232,160,32,0.07);
+           border-bottom:1px solid rgba(232,160,32,0.18);
+           padding:20px 36px;display:flex;align-items:center;
+           justify-content:space-between;flex-wrap:wrap;gap:14px;">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span style="font-family:'Roboto Mono',monospace;font-size:10px;font-weight:500;
+                 letter-spacing:0.18em;text-transform:uppercase;color:#E8A020;">DISC</span>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;
+                 color:#EEF3F8;">Discovery Flight</span>
+          <span style="font-family:'Roboto Mono',monospace;font-size:9px;font-weight:500;
+                 letter-spacing:0.14em;text-transform:uppercase;color:#07101A;
+                 background:#E8A020;padding:4px 9px;border-radius:3px;">Cirrus SR20 G3</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:8px;">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:38px;
+                 color:#E8A020;letter-spacing:-0.03em;line-height:1;">$350</span>
+          <span style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.12em;
+                 color:#7A92A8;text-transform:uppercase;">all in</span>
+        </div>
+      </div>
+
+      <!-- body: narrative + checklist -->
+      <div class="disc-body">
+
+        <!-- left: narrative -->
+        <div>
+          <p style="color:#7A92A8;font-size:15.5px;line-height:1.72;margin-bottom:18px;">
+            We start with a ground briefing where I walk you through the airplane, the instruments,
+            and what we're going to do. Then we go fly. Once we're clear of the airport, you take
+            the controls.
+          </p>
+          <p style="color:#7A92A8;font-size:15.5px;line-height:1.72;margin-bottom:18px;">
+            Turns, climbs, descents — all with a certified flight instructor right beside you
+            the whole time.
+          </p>
+          <p style="color:#7A92A8;font-size:15.5px;line-height:1.72;">
+            The entire experience runs about 90 minutes, and the flight time counts. You'll leave
+            with a signed logbook entry showing dual instruction received — your very first hour
+            toward a pilot certificate is already done.
+          </p>
+        </div>
+
+        <!-- right: checklist + logbook callout + CTA -->
+        <div>
+          <div style="font-family:'Roboto Mono',monospace;font-size:9.5px;font-weight:500;
+               letter-spacing:0.18em;text-transform:uppercase;color:#E8A020;margin-bottom:18px;">
+            What's included
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:13px;margin-bottom:28px;">
+
+            <div style="display:flex;align-items:flex-start;gap:13px;">
+              <div style="width:22px;height:22px;border-radius:50%;
+                   background:rgba(232,160,32,0.12);border:1px solid rgba(232,160,32,0.28);
+                   display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                     stroke="#E8A020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <span style="font-size:14.5px;color:#BFD9EE;line-height:1.55;">
+                Ground briefing — airplane, instruments, and flight plan
+              </span>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:13px;">
+              <div style="width:22px;height:22px;border-radius:50%;
+                   background:rgba(232,160,32,0.12);border:1px solid rgba(232,160,32,0.28);
+                   display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                     stroke="#E8A020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <span style="font-size:14.5px;color:#BFD9EE;line-height:1.55;">
+                Flight in the Cirrus SR20 G3 — you at the controls
+              </span>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:13px;">
+              <div style="width:22px;height:22px;border-radius:50%;
+                   background:rgba(232,160,32,0.12);border:1px solid rgba(232,160,32,0.28);
+                   display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                     stroke="#E8A020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <span style="font-size:14.5px;color:#BFD9EE;line-height:1.55;">
+                ~90 minutes total — briefing through landing
+              </span>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:13px;">
+              <div style="width:22px;height:22px;border-radius:50%;
+                   background:rgba(232,160,32,0.12);border:1px solid rgba(232,160,32,0.28);
+                   display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                     stroke="#E8A020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <span style="font-size:14.5px;color:#BFD9EE;line-height:1.55;">
+                Signed logbook entry — flight time counts toward your certificate
+              </span>
+            </div>
+
+          </div>
+
+          <!-- logbook callout -->
+          <div style="background:rgba(79,163,217,0.07);border:1px solid rgba(79,163,217,0.16);
+               border-radius:8px;padding:16px 18px;margin-bottom:28px;">
+            <span style="font-family:'Roboto Mono',monospace;font-size:9px;font-weight:500;
+                   letter-spacing:0.16em;text-transform:uppercase;color:#4FA3D9;
+                   display:block;margin-bottom:6px;">Logbook credit</span>
+            <span style="font-size:13.5px;color:#BFD9EE;line-height:1.6;">
+              Your first hour of dual instruction received — already logged before your second flight.
+            </span>
+          </div>
+
+          <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener"
+             class="btn-primary"
+             style="width:100%;justify-content:center;
+                    background:#E8A020;border-color:#E8A020;color:#07101A;
+                    box-shadow:0 0 14px rgba(232,160,32,0.4),0 0 36px rgba(232,160,32,0.18),0 2px 8px rgba(0,0,0,0.5);"
+             onmouseover="this.style.background='#F0B535';this.style.borderColor='#F0B535';this.style.boxShadow='0 0 22px rgba(232,160,32,0.6),0 0 52px rgba(232,160,32,0.28),0 4px 14px rgba(0,0,0,0.5)';"
+             onmouseout="this.style.background='#E8A020';this.style.borderColor='#E8A020';this.style.boxShadow='0 0 14px rgba(232,160,32,0.4),0 0 36px rgba(232,160,32,0.18),0 2px 8px rgba(0,0,0,0.5)';">
+            Book Your Discovery Flight
+          </a>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -780,10 +965,20 @@
         <h3 style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:17px;
              margin-bottom:10px;">Fly a discovery flight</h3>
         <p style="color:#7A92A8;font-size:14.5px;line-height:1.65;">
-          One flight to see what training actually looks and feels like. You'll be
-          at the controls over greater Atlanta, getting a real sense of the process
-          before committing to a full program.
+          90 minutes in the SR20 — ground briefing, you at the controls, and a signed
+          logbook entry to start. $350, all in.
         </p>
+        <a href="#discovery"
+           style="display:inline-flex;align-items:center;gap:6px;margin-top:22px;
+                  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;
+                  letter-spacing:0.06em;text-transform:uppercase;color:#E8A020;
+                  text-decoration:none;transition:color 0.2s;">
+          See what's included
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
 
       <!-- step 3 -->
@@ -834,8 +1029,8 @@
         <!-- instructor photo -->
         <div style="margin-bottom:28px;border-radius:10px;overflow:hidden;
              border:1.5px solid rgba(79,163,217,0.14);max-width:420px;position:relative;">
-          <img src="mitch-epic.jpg"
-               alt="Mitch Gunter in the cockpit of an Epic aircraft"
+          <img src="mitch-solo.jpg"
+               alt="Mitch Gunter, CFI"
                onerror="this.src='https://placehold.co/840x480/0D1B2A/2C6E9E?text=Photo+coming+soon'"
                style="width:100%;display:block;object-fit:cover;object-position:center 22%;
                       aspect-ratio:4/3;">
@@ -851,8 +1046,7 @@
 
         <p>Mitch is an FAA certificated flight instructor (CFI, CFII, MEI) and commercial
            pilot based in the Atlanta area, flying out of DeKalb-Peachtree (KPDK) and
-           Lawrenceville (KLZU). He trained through ATP Flight School and has instructed
-           in both Part 61 and Part 141 environments.</p>
+           Lawrenceville (KLZU). He has instructed in both Part 61 and Part 141 environments.</p>
         <p>His teaching leans on scenario-based training: every flight has a mission,
            every debrief has takeaways, and progress is measured against the checkride
            standard from day one. Students get a written syllabus, straight feedback,
@@ -952,16 +1146,17 @@
     <h2 class="rv" style="font-family:'Montserrat',sans-serif;font-weight:800;
         font-size:clamp(32px,4.6vw,52px);line-height:1.08;letter-spacing:-0.03em;
         max-width:20ch;margin:0 auto 22px;">
-      Start with a free consultation.
+      Ready to fly?
     </h2>
 
     <p class="rv" style="color:#7A92A8;max-width:48ch;margin:0 auto 44px;
         font-size:clamp(14.5px,1.5vw,17px);">
-      Pick a time, pick an airport. One 30-minute call and a clear plan
-      for getting you to your certificate or rating.
+      Book a discovery flight and you're in the air within days.
+      Or ask a question — either way, expect a same-day reply.
     </p>
 
-    <div class="rv" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <div class="rv" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;">
+      <!-- UPDATE: swap this URL to a discovery-flight-specific Calendly event once created -->
       <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
@@ -970,16 +1165,41 @@
           <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
           <line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
-        Schedule a Flight
+        Book a Discovery Flight — $350
       </a>
-      <a href="mailto:info@adlerflight.com" class="btn-ghost">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+      <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-ghost">
+        Have questions? Free 30-min call
+      </a>
+    </div>
+
+    <!-- phone + email row -->
+    <div class="rv" style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;
+         transition-delay:0.12s;">
+      <!-- ADD GOOGLE VOICE NUMBER HERE — replace (000) 000-0000 -->
+      <a href="tel:0000000000"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+                font-family:'Roboto Mono',monospace;font-size:13px;letter-spacing:0.06em;
+                color:#7A92A8;transition:color 0.2s;"
+         onmouseover="this.style.color='#BFD9EE'" onmouseout="this.style.color='#7A92A8'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+        </svg>
+        (000) 000-0000
+      </a>
+      <a href="mailto:info@adlerflight.com"
+         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+                font-family:'Roboto Mono',monospace;font-size:13px;letter-spacing:0.06em;
+                color:#7A92A8;transition:color 0.2s;"
+         onmouseover="this.style.color='#BFD9EE'" onmouseout="this.style.color='#7A92A8'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
              aria-hidden="true">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
           <polyline points="22,6 12,13 2,6"/>
         </svg>
-        Email Mitch
+        info@adlerflight.com
       </a>
     </div>
 
@@ -1005,10 +1225,25 @@
       </span>
     </div>
 
-    <span style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.16em;
-                 text-transform:uppercase;color:#3A5468;">
-      © 2026 Adler LLC &nbsp;·&nbsp; KPDK / KLZU
-    </span>
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+      <!-- ADD GOOGLE VOICE NUMBER HERE — replace (000) 000-0000 -->
+      <a href="tel:0000000000"
+         style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.14em;
+                color:#3A5468;text-decoration:none;transition:color 0.2s;"
+         onmouseover="this.style.color='#7A92A8'" onmouseout="this.style.color='#3A5468'">
+        (000) 000-0000
+      </a>
+      <a href="mailto:info@adlerflight.com"
+         style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.14em;
+                color:#3A5468;text-decoration:none;transition:color 0.2s;"
+         onmouseover="this.style.color='#7A92A8'" onmouseout="this.style.color='#3A5468'">
+        info@adlerflight.com
+      </a>
+      <span style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.16em;
+                   text-transform:uppercase;color:#3A5468;">
+        © 2026 Adler LLC &nbsp;·&nbsp; KPDK / KLZU
+      </span>
+    </div>
 
   </div>
 </footer>
