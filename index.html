@@ -6,7 +6,28 @@
   <meta name="google-site-verification" content="UZT5a7UMdnugdS4mhhZvjsJhZWa-ZYOunI9cxKC17wk">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adler LLC — Independent Flight Instruction · Atlanta, GA</title>
-  <meta name="description" content="Independent flight instruction in the Atlanta area. Private, instrument, commercial, and multi-engine training from KPDK and KLZU.">
+  <meta name="description" content="Independent flight instruction across greater Atlanta. Private through multi-engine training in your aircraft or a Cirrus SR20 — any airport, one instructor.">
+  <link rel="canonical" href="https://adlerflight.com/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#07101A">
+
+  <!-- Open Graph (Facebook, LinkedIn, iMessage) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Adler LLC">
+  <meta property="og:url" content="https://adlerflight.com/">
+  <meta property="og:title" content="Adler LLC — Independent Flight Instruction · Atlanta">
+  <meta property="og:description" content="One instructor, scenario-based training, and a syllabus built around your goals. Private through multi-engine — in your aircraft or a Cirrus SR20, at any airport in greater Atlanta.">
+  <meta property="og:image" content="https://adlerflight.com/n322mw-sr20.jpg">
+  <meta property="og:image:width" content="4000">
+  <meta property="og:image:height" content="3000">
+  <meta property="og:image:alt" content="Adler's Cirrus SR20 G3 on the ramp">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Adler LLC — Independent Flight Instruction · Atlanta">
+  <meta name="twitter:description" content="Private through multi-engine flight training across greater Atlanta — in your aircraft or a Cirrus SR20, at any airport.">
+  <meta name="twitter:image" content="https://adlerflight.com/n322mw-sr20.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -345,7 +366,78 @@
       /* inst grid gap */
       .inst-grid { gap: 28px; }
     }
+
+    /* ───── faq accordion ───── */
+    .faq-list {
+      max-width: 820px;
+      border: 1.5px solid rgba(79,163,217,0.14);
+      border-radius: 12px; overflow: hidden;
+      background: #0D1B2A;
+    }
+    .faq-item { border-bottom: 1px solid rgba(79,163,217,0.10); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item > summary {
+      list-style: none; cursor: pointer;
+      padding: 22px 26px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 16px;
+      color: #EEF3F8; transition: background 0.2s, color 0.2s;
+    }
+    .faq-item > summary::-webkit-details-marker { display: none; }
+    .faq-item > summary:hover { background: #111F30; color: #BFD9EE; }
+    .faq-item > summary:focus-visible { outline: 2px solid #4FA3D9; outline-offset: -2px; }
+    .faq-icon { flex-shrink: 0; width: 20px; height: 20px; position: relative; }
+    .faq-icon::before, .faq-icon::after {
+      content: ''; position: absolute; background: #4FA3D9; border-radius: 2px;
+      transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), opacity 0.28s;
+    }
+    .faq-icon::before { top: 9px; left: 2px; right: 2px; height: 2px; }
+    .faq-icon::after  { left: 9px; top: 2px; bottom: 2px; width: 2px; }
+    .faq-item[open] .faq-icon::after { transform: rotate(90deg); opacity: 0; }
+    .faq-answer {
+      padding: 2px 26px 24px; color: #7A92A8; font-size: 15px; line-height: 1.72;
+      max-width: 70ch;
+    }
+    .faq-answer strong { color: #BFD9EE; font-weight: 500; }
+    @media (prefers-reduced-motion: reduce) {
+      .faq-icon::before, .faq-icon::after { transition: none; }
+    }
   </style>
+
+  <!-- ───── structured data: business + FAQ (Google) ───── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "name": "Adler LLC",
+    "description": "Independent flight instruction across greater Atlanta — private, instrument, commercial, and multi-engine training in your aircraft or a Cirrus SR20.",
+    "url": "https://adlerflight.com/",
+    "email": "info@adlerflight.com",
+    "image": "https://adlerflight.com/n322mw-sr20.jpg",
+    "logo": "https://adlerflight.com/favicon.svg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA", "addressCountry": "US" },
+    "areaServed": { "@type": "City", "name": "Atlanta, Georgia" },
+    "founder": { "@type": "Person", "name": "Mitch Gunter", "jobTitle": "Certificated Flight Instructor (CFI, CFII, MEI)" },
+    "knowsAbout": ["Private Pilot training", "Instrument Rating", "Commercial Pilot training", "Multi-Engine rating", "Flight Review", "Instrument Proficiency Check", "High Performance and Complex endorsements"],
+    "makesOffer": { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Discovery Flight" }, "price": "350", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Do I need any experience to start?", "acceptedAnswer": { "@type": "Answer", "text": "None at all. A discovery flight and your first lessons assume zero hours — Mitch meets you wherever you are and builds from there." } },
+      { "@type": "Question", "name": "Do I need an FAA medical certificate?", "acceptedAnswer": { "@type": "Answer", "text": "Not for a discovery flight, but you'll need an FAA medical certificate before you can solo — so it's worth getting done early. Knock out the exam with an Aviation Medical Examiner before you start lessons and it never becomes the thing holding up your progress. Mitch can point you to a local AME." } },
+      { "@type": "Question", "name": "How long does the Private Pilot certificate take?", "acceptedAnswer": { "@type": "Answer", "text": "For a committed student flying two to three times a week, three to six months is realistic. Consistency is the biggest factor — the more often you fly, the less time you lose relearning, and the faster it goes." } },
+      { "@type": "Question", "name": "What does training cost?", "acceptedAnswer": { "@type": "Answer", "text": "In the SR20 it's $240/hr for the aircraft (dry — fuel separate) plus $60/hr for instruction, ground and flight: $300/hr total. Bring your own aircraft and you pay for instruction only. No club dues, no membership, no block-hour prepayment." } },
+      { "@type": "Question", "name": "Do I need to own an airplane?", "acceptedAnswer": { "@type": "Answer", "text": "No. Train in Mitch's Cirrus SR20 G3, or fly your own aircraft if you have one. Either way works." } },
+      { "@type": "Question", "name": "What should I bring to a discovery flight?", "acceptedAnswer": { "@type": "Answer", "text": "Comfortable clothes, closed-toe shoes, sunglasses, and a government-issued photo ID. If you're feeling under the weather, reschedule — and come ready to actually fly, because you'll be on the controls for most of it." } },
+      { "@type": "Question", "name": "What if the weather doesn't cooperate?", "acceptedAnswer": { "@type": "Answer", "text": "Weather scrubs are part of flight training, and they're never charged — you just reschedule. For any other cancellation, a day's notice (24 hours) is all Mitch asks." } },
+      { "@type": "Question", "name": "Where do we fly from?", "acceptedAnswer": { "@type": "Answer", "text": "Home bases are DeKalb-Peachtree (KPDK) and Lawrenceville (KLZU), but Mitch travels anywhere in the greater Atlanta area. Meet at your home field or wherever's most convenient." } }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -388,7 +480,8 @@
       <a href="#discovery">Discovery Flight</a>
       <a href="#approach">Approach</a>
       <a href="#instructor">Instructor</a>
-      <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-primary" style="margin-left:28px;">Book a Flight</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://calendar.google.com/appointments/schedules/AcZssZ1l7Xr0AvazbEtwp23HxbZL2javnn5Bc8GSYYHWBARCaQh7O7e75C49cUg3966sAHb_TKd2Rvzf" target="_blank" rel="noopener" class="btn-primary" style="margin-left:28px;">Book a Flight</a>
     </nav>
   </div>
 </header>
@@ -444,8 +537,8 @@
       </p>
 
       <div class="rv" style="display:flex;gap:14px;flex-wrap:wrap;">
-        <!-- UPDATE: swap this URL to a discovery-flight-specific Calendly event once created -->
-        <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-primary">Book a Discovery Flight — $350</a>
+        <!-- Discovery-flight booking · Google Calendar appointments -->
+        <a href="https://calendar.google.com/appointments/schedules/AcZssZ1l7Xr0AvazbEtwp23HxbZL2javnn5Bc8GSYYHWBARCaQh7O7e75C49cUg3966sAHb_TKd2Rvzf" target="_blank" rel="noopener" class="btn-primary">Book a Discovery Flight — $350</a>
         <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-ghost">Have questions? Free 30-min call</a>
       </div>
 
@@ -599,18 +692,18 @@
         <!-- left: narrative -->
         <div>
           <p style="color:#7A92A8;font-size:15.5px;line-height:1.72;margin-bottom:18px;">
-            We start with a ground briefing where I walk you through the airplane, the instruments,
-            and what we're going to do. Then we go fly. Once we're clear of the airport, you take
+            It starts with a ground briefing — Mitch walks you through the airplane, the instruments,
+            and the plan for the flight. Then you go fly. Once you're clear of the airport, you take
             the controls.
           </p>
           <p style="color:#7A92A8;font-size:15.5px;line-height:1.72;margin-bottom:18px;">
-            Turns, climbs, descents — all with a certified flight instructor right beside you
+            Turns, climbs, descents — with a certified flight instructor right beside you
             the whole time.
           </p>
           <p style="color:#7A92A8;font-size:15.5px;line-height:1.72;">
-            The entire experience runs about 90 minutes, and the flight time counts. You'll leave
-            with a signed logbook entry showing dual instruction received — your very first hour
-            toward a pilot certificate is already done.
+            The whole experience runs about 90 minutes, and the flight time counts. You'll leave
+            with a signed logbook entry for dual instruction received — your very first hour
+            toward a pilot certificate, already done.
           </p>
         </div>
 
@@ -692,7 +785,7 @@
             </span>
           </div>
 
-          <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener"
+          <a href="https://calendar.google.com/appointments/schedules/AcZssZ1l7Xr0AvazbEtwp23HxbZL2javnn5Bc8GSYYHWBARCaQh7O7e75C49cUg3966sAHb_TKd2Rvzf" target="_blank" rel="noopener"
              class="btn-primary"
              style="width:100%;justify-content:center;
                     background:#E8A020;border-color:#E8A020;color:#07101A;
@@ -724,7 +817,7 @@
          position:relative;max-height:340px;
          border:1.5px solid rgba(232,160,32,0.18);
          box-shadow:0 8px 40px rgba(0,0,0,0.55);">
-      <img src="N322MW SR20.JPG"
+      <img src="n322mw-sr20.jpg"
            alt="Adler's Cirrus SR20 G3 N322MW on the ramp"
            style="width:100%;display:block;object-fit:cover;object-position:center 40%;max-height:340px;">
       <div style="position:absolute;inset:0;
@@ -757,19 +850,19 @@
         <p class="rv" style="color:#7A92A8;font-size:15px;max-width:42ch;line-height:1.7;">
           Don't have an aircraft? Fly in Adler's own Cirrus SR20 Generation 3 —
           a capable, well-equipped airplane available for all training and checkride prep.
-          Dry lease rate is <strong style="color:#BFD9EE;">$240 / hr</strong>,
+          Dry lease rate is <strong style="color:#BFD9EE;">$240/hr</strong>,
           fuel on top. No club membership, no scheduling board.
         </p>
         <p class="rv" style="color:#7A92A8;font-size:15px;max-width:42ch;line-height:1.7;margin-top:12px;">
           Available at any airport in the <strong style="color:#BFD9EE;">greater Atlanta area</strong> —
-          bring the aircraft to your home field or meet at a mutually convenient field.
-          Mitch will come to you.
+          meet at your home field, or a spot that's convenient for both of us.
+          Mitch comes to you.
         </p>
 
         <!-- 430 panel photo -->
         <div class="rv" style="margin-top:28px;border-radius:10px;overflow:hidden;
              border:1.5px solid rgba(232,160,32,0.18);max-width:480px;position:relative;">
-          <img src="GNS WAAS 430.JPG"
+          <img src="gns-430-waas.jpg"
                alt="Avidyne Entegra glass panel with dual Garmin GNS 430 WAAS in the Cirrus SR20 G3"
                style="width:100%;display:block;object-fit:cover;object-position:center;">
           <div style="position:absolute;bottom:0;left:0;right:0;
@@ -815,7 +908,7 @@
               Aircraft rate
             </div>
             <div style="font-size:14px;color:#BFD9EE;">
-              $240 / hr <span style="color:#7A92A8;font-size:13px;">dry · fuel separate</span>
+              $240/hr <span style="color:#7A92A8;font-size:13px;">dry · fuel separate</span>
             </div>
           </div>
 
@@ -826,7 +919,7 @@
               Instruction rate
             </div>
             <div style="font-size:14px;color:#BFD9EE;">
-              $60 / hr <span style="color:#7A92A8;font-size:13px;">ground &amp; flight</span>
+              $60/hr <span style="color:#7A92A8;font-size:13px;">ground &amp; flight</span>
             </div>
           </div>
 
@@ -842,7 +935,7 @@
 
         <!-- total cost note -->
         <p style="font-size:13px;color:#7A92A8;margin-top:14px;line-height:1.6;">
-          Flying the SR20: <strong style="color:#BFD9EE;">$300 / hr total</strong>
+          Flying the SR20: <strong style="color:#BFD9EE;">$300/hr total</strong>
           <span style="color:#3A5468;"> + fuel.</span>
           Bring your own aircraft and pay instruction only.
         </p>
@@ -888,9 +981,8 @@
       <div class="approach-col rv" style="transition-delay:0.18s;">
         <div class="col-rule"></div>
         <h3>Any airport, greater Atlanta</h3>
-        <p>Home field, home base, or a field that's just more convenient for you.
-           Mitch travels across the greater Atlanta area — the airport comes
-           to you, not the other way around.</p>
+        <p>Home field, home base, or a field that's just more convenient — Mitch travels
+           across the greater Atlanta area to meet you where you already fly.</p>
       </div>
 
     </div>
@@ -929,13 +1021,12 @@
           </svg>
         </div>
         <h3 style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:17px;
-             margin-bottom:10px;">Schedule a free call</h3>
+             margin-bottom:10px;">Book your discovery flight</h3>
         <p style="color:#7A92A8;font-size:14.5px;line-height:1.65;">
-          Book a 30-minute intro call via Calendly. We'll talk through your goals,
-          your timeline, and which certificate or rating makes sense to start with.
-          No obligation.
+          Pick a time straight from the booking link and you're set. Prefer to talk first?
+          Grab a free 30-minute call or send an email — no obligation either way.
         </p>
-        <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener"
+        <a href="https://calendar.google.com/appointments/schedules/AcZssZ1l7Xr0AvazbEtwp23HxbZL2javnn5Bc8GSYYHWBARCaQh7O7e75C49cUg3966sAHb_TKd2Rvzf" target="_blank" rel="noopener"
            style="display:inline-flex;align-items:center;gap:6px;margin-top:22px;
                   font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;
                   letter-spacing:0.06em;text-transform:uppercase;color:#4FA3D9;
@@ -965,7 +1056,7 @@
         <h3 style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:17px;
              margin-bottom:10px;">Fly a discovery flight</h3>
         <p style="color:#7A92A8;font-size:14.5px;line-height:1.65;">
-          90 minutes in the SR20 — ground briefing, you at the controls, and a signed
+          About 90 minutes in the SR20 — ground briefing, you at the controls, and a signed
           logbook entry to start. $350, all in.
         </p>
         <a href="#discovery"
@@ -1047,14 +1138,14 @@
         <p>Mitch is an FAA certificated flight instructor (CFI, CFII, MEI) and commercial
            pilot based in the Atlanta area, flying out of DeKalb-Peachtree (KPDK) and
            Lawrenceville (KLZU). He has instructed in both Part 61 and Part 141 environments.</p>
-        <p>His teaching leans on scenario-based training: every flight has a mission,
-           every debrief has takeaways, and progress is measured against the checkride
-           standard from day one. Students get a written syllabus, straight feedback,
-           and an instructor who answers his phone.</p>
+        <p>His teaching leans on scenario-based training — realistic missions, honest
+           debriefs, and progress measured against the checkride standard from day one.
+           Students get a written syllabus, straight feedback, and an instructor who
+           answers his phone.</p>
         <p>Member, AOPA and the FAA WINGS program.</p>
 
         <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
-          <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-primary">Book a flight</a>
+          <a href="https://calendar.google.com/appointments/schedules/AcZssZ1l7Xr0AvazbEtwp23HxbZL2javnn5Bc8GSYYHWBARCaQh7O7e75C49cUg3966sAHb_TKd2Rvzf" target="_blank" rel="noopener" class="btn-primary">Book a Flight</a>
           <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-ghost">View schedule</a>
         </div>
       </div>
@@ -1079,7 +1170,7 @@
           </div>
           <div class="cred-row">
             <div class="cred-label">Service area</div>
-            <div class="cred-val">Greater Atlanta, GA<br>Any airport — Mitch comes to you</div>
+            <div class="cred-val">Greater Atlanta, GA<br>Any airport — Mitch travels to you</div>
           </div>
         </div>
 
@@ -1122,6 +1213,65 @@
 
 
 <!-- ═══════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════════ -->
+<section id="faq" style="padding:100px 0;border-top:1px solid rgba(79,163,217,0.10);">
+  <div class="section-wrap">
+
+    <div class="sec-head rv">
+      <div class="eyebrow">Common questions</div>
+      <h2>Straight answers.</h2>
+      <p>What most people want to know before their first lesson.</p>
+    </div>
+
+    <div class="faq-list rv">
+
+      <details class="faq-item" open>
+        <summary>Do I need any experience to start?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">None at all. A discovery flight and your first lessons assume zero hours — Mitch meets you wherever you are and builds from there.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need an FAA medical certificate?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">Not for a discovery flight, but you'll need an FAA medical certificate before you can solo — so it's worth getting done early. Knock out the exam with an Aviation Medical Examiner before you start lessons and it never becomes the thing holding up your progress. Mitch can point you to a local AME.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long does the Private Pilot certificate take?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">For a committed student flying two to three times a week, three to six months is realistic. Consistency is the biggest factor — the more often you fly, the less time you lose relearning, and the faster it goes.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What does training cost?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">In the SR20 it's <strong>$240/hr</strong> for the aircraft (dry — fuel separate) plus <strong>$60/hr</strong> for instruction, ground and flight: <strong>$300/hr total</strong>. Bring your own aircraft and you pay for instruction only. No club dues, no membership, no block-hour prepayment.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to own an airplane?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">No. Train in Mitch's Cirrus SR20 G3, or fly your own aircraft if you have one. Either way works.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What should I bring to a discovery flight?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">Comfortable clothes, closed-toe shoes, sunglasses, and a government-issued photo ID. If you're feeling under the weather, reschedule — and come ready to actually fly, because you'll be on the controls for most of it.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if the weather doesn't cooperate?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">Weather scrubs are part of flight training, and they're never charged — you just reschedule. For any other cancellation, a day's notice (24 hours) is all Mitch asks.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Where do we fly from?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">Home bases are DeKalb-Peachtree (KPDK) and Lawrenceville (KLZU), but Mitch travels anywhere in the greater Atlanta area. Meet at your home field or wherever's most convenient.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
      CONTACT / CTA
 ════════════════════════════════════════════════ -->
 <section id="contact" class="contact-bg" style="padding:120px 0;position:relative;overflow:hidden;">
@@ -1156,8 +1306,8 @@
     </p>
 
     <div class="rv" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;">
-      <!-- UPDATE: swap this URL to a discovery-flight-specific Calendly event once created -->
-      <a href="https://calendly.com/adlerflight/30min" target="_blank" rel="noopener" class="btn-primary">
+      <!-- Discovery-flight booking · Google Calendar appointments -->
+      <a href="https://calendar.google.com/appointments/schedules/AcZssZ1l7Xr0AvazbEtwp23HxbZL2javnn5Bc8GSYYHWBARCaQh7O7e75C49cUg3966sAHb_TKd2Rvzf" target="_blank" rel="noopener" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
              aria-hidden="true">
@@ -1175,19 +1325,7 @@
     <!-- phone + email row -->
     <div class="rv" style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;
          transition-delay:0.12s;">
-      <!-- ADD GOOGLE VOICE NUMBER HERE — replace (000) 000-0000 -->
-      <a href="tel:0000000000"
-         style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;
-                font-family:'Roboto Mono',monospace;font-size:13px;letter-spacing:0.06em;
-                color:#7A92A8;transition:color 0.2s;"
-         onmouseover="this.style.color='#BFD9EE'" onmouseout="this.style.color='#7A92A8'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
-             aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
-        </svg>
-        (000) 000-0000
-      </a>
+      <!-- Phone hidden until Google Voice is set up — re-add a tel: link with the phone icon here when ready. Email + the booking link carry contact for now. -->
       <a href="mailto:info@adlerflight.com"
          style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;
                 font-family:'Roboto Mono',monospace;font-size:13px;letter-spacing:0.06em;
@@ -1226,13 +1364,7 @@
     </div>
 
     <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-      <!-- ADD GOOGLE VOICE NUMBER HERE — replace (000) 000-0000 -->
-      <a href="tel:0000000000"
-         style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.14em;
-                color:#3A5468;text-decoration:none;transition:color 0.2s;"
-         onmouseover="this.style.color='#7A92A8'" onmouseout="this.style.color='#3A5468'">
-        (000) 000-0000
-      </a>
+      <!-- Phone hidden until Google Voice is set up — re-add a tel: link here when ready. -->
       <a href="mailto:info@adlerflight.com"
          style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.14em;
                 color:#3A5468;text-decoration:none;transition:color 0.2s;"
