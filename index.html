@@ -322,9 +322,32 @@
       transform-origin: center;
     }
 
-    /* ───── mobile nav hide ───── */
+    /* ───── mobile nav: hide text links, show menu toggle ───── */
+    .nav-toggle {
+      display: none; background: none; border: 1.5px solid rgba(79,163,217,0.25);
+      border-radius: 6px; width: 40px; height: 40px; align-items: center; justify-content: center;
+      cursor: pointer; color: #BFD9EE; margin-left: 10px; flex-shrink: 0;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .nav-toggle:hover { border-color: #4FA3D9; background: rgba(79,163,217,0.08); }
+    .nav-toggle:active { transform: translateY(1px); }
+    .nav-menu { display: none; }
     @media (max-width: 760px) {
       .nav-links a:not(.btn-primary) { display: none; }
+      .nav-links .btn-primary { margin-left: 0 !important; padding: 11px 16px; font-size: 12.5px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-menu {
+        position: fixed; top: 70px; left: 0; right: 0; z-index: 99;
+        background: rgba(7,16,26,0.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(79,163,217,0.14); padding: 8px 20px 16px; flex-direction: column;
+      }
+      .nav-menu.open { display: flex; }
+      .nav-menu a {
+        color: #BFD9EE; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 600;
+        font-size: 15px; padding: 13px 4px; border-bottom: 1px solid rgba(79,163,217,0.08);
+      }
+      .nav-menu a:last-child { border-bottom: none; }
+      .nav-menu a.accent { color: #E8A020; }
     }
 
     /* ───── discovery flight inner grid ───── */
@@ -418,7 +441,7 @@
     "address": { "@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA", "addressCountry": "US" },
     "areaServed": { "@type": "City", "name": "Atlanta, Georgia" },
     "founder": { "@type": "Person", "name": "Mitch Gunter", "jobTitle": "Certificated Flight Instructor (CFI, CFII, MEI)" },
-    "knowsAbout": ["Private Pilot training", "Instrument Rating", "Commercial Pilot training", "Multi-Engine rating", "Flight Review", "Instrument Proficiency Check", "High Performance and Complex endorsements"],
+    "knowsAbout": ["Private Pilot training", "Instrument Rating", "Commercial Pilot training", "Multi-Engine training in a Beechcraft B55 Baron at Monroe, GA (D73)", "Flight Review", "Instrument Proficiency Check", "High Performance and Complex endorsements"],
     "makesOffer": { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Discovery Flight" }, "price": "350", "priceCurrency": "USD" }
   }
   </script>
@@ -434,7 +457,7 @@
       { "@type": "Question", "name": "Do I need to own an airplane?", "acceptedAnswer": { "@type": "Answer", "text": "No. Train in Mitch's Cirrus SR20 G3, or fly your own aircraft if you have one. Either way works." } },
       { "@type": "Question", "name": "What should I bring to a discovery flight?", "acceptedAnswer": { "@type": "Answer", "text": "Comfortable clothes, closed-toe shoes, sunglasses, and a government-issued photo ID. If you're feeling under the weather, reschedule — and come ready to actually fly, because you'll be on the controls for most of it." } },
       { "@type": "Question", "name": "What if the weather doesn't cooperate?", "acceptedAnswer": { "@type": "Answer", "text": "Weather scrubs are part of flight training, and they're never charged — you just reschedule. For any other cancellation, a day's notice (24 hours) is all Mitch asks." } },
-      { "@type": "Question", "name": "Where do we fly from?", "acceptedAnswer": { "@type": "Answer", "text": "Home bases are DeKalb-Peachtree (KPDK) and Lawrenceville (KLZU), but Mitch travels anywhere in the greater Atlanta area. Meet at your home field or wherever's most convenient." } }
+      { "@type": "Question", "name": "Where do we fly from?", "acceptedAnswer": { "@type": "Answer", "text": "Home bases are DeKalb-Peachtree (KPDK) and Lawrenceville (KLZU), but Mitch travels anywhere in the greater Atlanta area. Meet at your home field or wherever's most convenient. Multi-engine training in the Baron runs out of Monroe (D73)." } }
     ]
   }
   </script>
@@ -481,8 +504,22 @@
       <a href="#approach">Approach</a>
       <a href="#instructor">Instructor</a>
       <a href="#faq">FAQ</a>
+      <a href="multi-engine.html">Multi-Engine</a>
       <a href="https://calendar.google.com/appointments/schedules/AcZssZ1l7Xr0AvazbEtwp23HxbZL2javnn5Bc8GSYYHWBARCaQh7O7e75C49cUg3966sAHb_TKd2Rvzf" target="_blank" rel="noopener" class="btn-primary" style="margin-left:28px;">Book a Flight</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
     </nav>
+  </div>
+  <!-- mobile menu (shown ≤760px via the toggle) -->
+  <div class="nav-menu" id="nav-menu">
+    <a href="#training">Training</a>
+    <a href="#discovery">Discovery Flight</a>
+    <a href="#approach">Approach</a>
+    <a href="#instructor">Instructor</a>
+    <a href="#faq">FAQ</a>
+    <a href="multi-engine.html" class="accent">Multi-Engine · Baron</a>
+    <a href="#contact">Contact</a>
   </div>
 </header>
 
@@ -605,11 +642,15 @@
         <p>Precision maneuvers and professional standards for pilots ready to make flying a career.</p>
       </div>
 
-      <div class="card">
+      <a class="card" href="multi-engine.html" style="position:relative;display:block;text-decoration:none;">
+        <span class="card-badge">Baron · D73</span>
         <div class="card-code">MEL</div>
         <h3>Multi-Engine</h3>
-        <p>Add-on training focused on single-engine procedures, systems knowledge, and real proficiency — not minimums.</p>
-      </div>
+        <p>Add-on, MEI, transitions and time building in a Beechcraft B55 Baron at Monroe. Engine-out flying the way it actually works — not minimums.</p>
+        <span style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#E8A020;">See the Baron program
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </a>
 
       <div class="card">
         <div class="card-code">HP · CX</div>
@@ -1263,7 +1304,7 @@
 
       <details class="faq-item">
         <summary>Where do we fly from?<span class="faq-icon" aria-hidden="true"></span></summary>
-        <div class="faq-answer">Home bases are DeKalb-Peachtree (KPDK) and Lawrenceville (KLZU), but Mitch travels anywhere in the greater Atlanta area. Meet at your home field or wherever's most convenient.</div>
+        <div class="faq-answer">Home bases are DeKalb-Peachtree (KPDK) and Lawrenceville (KLZU), but Mitch travels anywhere in the greater Atlanta area. Meet at your home field or wherever's most convenient. Multi-engine training in the Baron runs out of Monroe (D73).</div>
       </details>
 
     </div>
@@ -1322,6 +1363,20 @@
       </a>
     </div>
 
+    <!-- Google review button — link from Business Profile → "Ask for reviews" -->
+    <div class="rv" id="google-review" style="margin:-8px 0 32px;">
+      <a href="https://g.page/r/CSmoZfTe-95KEAI/review" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+                font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:0.05em;
+                text-transform:uppercase;color:#BFD9EE;padding:11px 18px;border-radius:6px;
+                border:1.5px solid rgba(232,160,32,0.35);background:rgba(232,160,32,0.06);transition:border-color 0.2s, background 0.2s;"
+         onmouseover="this.style.borderColor='#E8A020';this.style.background='rgba(232,160,32,0.12)'"
+         onmouseout="this.style.borderColor='rgba(232,160,32,0.35)';this.style.background='rgba(232,160,32,0.06)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#E8A020" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Flown with Mitch? Leave a Google review
+      </a>
+    </div>
+
     <!-- phone + email row -->
     <div class="rv" style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;
          transition-delay:0.12s;">
@@ -1365,6 +1420,12 @@
 
     <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
       <!-- Phone hidden until Google Voice is set up — re-add a tel: link here when ready. -->
+      <a href="multi-engine.html"
+         style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+                color:#3A5468;text-decoration:none;transition:color 0.2s;"
+         onmouseover="this.style.color='#7A92A8'" onmouseout="this.style.color='#3A5468'">
+        Multi-Engine · Baron
+      </a>
       <a href="mailto:info@adlerflight.com"
          style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:0.14em;
                 color:#3A5468;text-decoration:none;transition:color 0.2s;"
@@ -1505,6 +1566,26 @@ void main(void){
 
 
 <!-- ═══════════════════════════════════════════
+     MOBILE NAV
+════════════════════════════════════════════════ -->
+<script>
+(function () {
+  const btn = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  if (!btn || !menu) return;
+  function setOpen(open) {
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', () => setOpen(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+})();
+</script>
+
+
+<!-- ═══════════════════════════════════════════
      SCROLL REVEAL
 ════════════════════════════════════════════════ -->
 <script>
@@ -1516,7 +1597,7 @@ void main(void){
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.10 });
+  }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
 
   document.querySelectorAll('.rv').forEach((el, i) => {
     if (!el.style.transitionDelay) {
